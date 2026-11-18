@@ -20,6 +20,7 @@
     "@gltf-transform/extensions": "^4.5.1",
     "@gltf-transform/functions": "^4.5.1",
     "@rive-app/canvas": "^2.51.0",
+    "@vercel/analytics": "^2.0.1",
     "animejs": "^4.5.0",
     "cannon-es": "^0.20.0",
     "gsap": "^3.15.1",
@@ -38,6 +39,7 @@
     "zustand": "^5.1.0"
   },
   "devDependencies": {
+    "@gltf-transform/cli": "^4.5.1",
     "@types/howler": "^2.2.12",
     "@types/matter-js": "^0.20.2",
     "@types/react": "^19.3.0",
@@ -45,7 +47,6 @@
     "@types/three": "^0.187.0",
     "@vitejs/plugin-react": "^6.3.0",
     "typescript": "~5.9.2",
-    "vite": "^8.3.8",
-    "@gltf-transform/cli": "^4.5.1"
+    "vite": "^8.3.8"
   }
 }

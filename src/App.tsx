@@ -4,6 +4,7 @@ import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { animate as anime } from 'animejs';
+import { Analytics } from '@vercel/analytics/react';
 import { weddingEvents, invitationText, type WeddingEvent } from './data';
 import { useStudioStore } from './store';
 import { soundStudio } from './audio/SoundStudio';
@@ -334,5 +335,6 @@ export default function App() {
     <AnimatePresence>{lightbox && <motion.div className="lightbox-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setLightbox(null)}><button className="lightbox-close" onClick={() => setLightbox(null)}>×</button><motion.img src={lightbox} initial={{ scale: .9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: .96, opacity: 0 }} onClick={e => e.stopPropagation()} /></motion.div>}</AnimatePresence>
     <AnimatePresence>{guestEditor && <motion.div className="modal-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setGuestEditor(false)}><motion.form className="guest-modal" initial={{ y: 22, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 20, opacity: 0 }} onSubmit={e => { e.preventDefault(); setGuest(guestDraft); setGuestEditor(false); }} onClick={e => e.stopPropagation()}><button type="button" className="modal-close" onClick={() => setGuestEditor(false)}>×</button><span className="eyebrow">PERSONAL INVITATION</span><h3>مہمان کا نام</h3><p>دعوت نامے پر اپنا یا مہمان کا نام دکھائیں۔</p><input value={guestDraft} onChange={e => setGuestDraft(e.target.value)} maxLength={48} placeholder="نام درج کریں" /><button className="gold-button" type="submit">محفوظ کریں</button></motion.form></motion.div>}</AnimatePresence>
     <div className="toast" aria-live="polite">{copied ? 'دعوت کا متن کاپی ہو گیا' : ''}</div>
+    <Analytics />
   </div>;
 }
